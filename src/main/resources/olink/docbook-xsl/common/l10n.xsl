@@ -17,7 +17,8 @@ xmlns:l="http://docbook.sourceforge.net/xmlns/l10n/1.0"
      ******************************************************************** -->
 
 <xsl:param name="l10n.xml" select="document('../common/l10n.xml')"/>
-<xsl:param name="local.l10n.xml" select="document('')"/>
+<!-- DWC: Changed document('') to document(base-uri()) for xslt 2.0 -->
+<xsl:param name="local.l10n.xml" select="document(base-uri())"/>
 <xsl:param name="empty.local.l10n.xml" select="not($local.l10n.xml//l:l10n)"/>
 
 <xsl:key name="l10n-lang" match="l:l10n" use="@language"/>

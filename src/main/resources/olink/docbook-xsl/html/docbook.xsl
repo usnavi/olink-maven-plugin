@@ -30,7 +30,8 @@ xmlns:ng="http://docbook.org/docbook-ng"
 <xsl:include href="../lib/lib.xsl"/>
 <xsl:include href="../common/l10n.xsl"/>
 <xsl:include href="../common/common.xsl"/>
-<xsl:include href="../common/utility.xsl"/>
+<!-- Commenting out to avoid Calabash complaint about it being imported twice (also pulled in by addns.xsl -->
+<!-- <xsl:include href="../common/utility.xsl"/> -->
 <xsl:include href="../common/labels.xsl"/>
 <xsl:include href="../common/titles.xsl"/>
 <xsl:include href="../common/subtitles.xsl"/>
