@@ -29,7 +29,7 @@
   </cx:message>
 
   <!-- Output to file -->
-  <p:store method="xml" > 
+  <p:store method="xml" ><!-- indent="true -->
     <p:with-option name="href" select="concat($mavenBuildDir,'/olink.db')"/>
   </p:store>
 
