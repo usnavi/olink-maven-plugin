@@ -68,8 +68,8 @@
   </dependencies>
 
   <scm>
-    <connection>git@github.rackspace.com:CDT/olink-maven-plugin.git</connection>
-    <!-- <connection>scm:git:ssh://git@github.com/rackerlabs/olink-maven-plugin.git</connection> -->
+    <!-- <connection>git@github.rackspace.com:CDT/olink-maven-plugin.git</connection> -->
+    <connection>scm:git:ssh://git@github.com/rackerlabs/olink-maven-plugin.git</connection>
   </scm>
 
     <distributionManagement>
