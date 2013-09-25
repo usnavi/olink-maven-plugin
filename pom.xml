@@ -7,6 +7,25 @@
   <packaging>maven-plugin</packaging>
   <name>olink-maven-plugin</name>
 
+  <url>https://github.com/rackerlabs/olink-maven-plugin</url>
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <name>David Cramer</name>
+      <email>david.cramer@rackspace.com</email>
+    </developer>
+    <developer>
+      <name>Sam Harwell</name>
+      <email>sam.harwell@rackspace.com</email>
+    </developer>
+  </developers>
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
@@ -69,9 +88,15 @@
 
   </dependencies>
 
+  <issueManagement>
+    <system>GitHub Issues</system>
+    <url>https://github.com/rackerlabs/olink-maven-plugin/issues</url>
+  </issueManagement>
+
   <scm>
-    <!-- <connection>git@github.rackspace.com:CDT/olink-maven-plugin.git</connection> -->
-    <connection>scm:git:ssh://git@github.com/rackerlabs/olink-maven-plugin.git</connection>
+    <url>https://github.com/rackerlabs/olink-maven-plugin/tree/master</url>
+    <connection>scm:git:git://github.com/rackerlabs/olink-maven-plugin.git</connection>
+    <developerConnection>scm:git:git@github.com:rackerlabs/olink-maven-plugin.git</developerConnection>
   </scm>
 
     <distributionManagement>
