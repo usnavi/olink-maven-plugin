@@ -26,35 +26,15 @@
     </developer>
   </developers>
 
+  <parent>
+    <groupId>org.sonatype.oss</groupId>
+    <artifactId>oss-parent</artifactId>
+    <version>7</version>
+  </parent>
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-
-  <repositories>
-    <repository>
-      <id>public.maven.research.rackspace.com</id>
-      <name>Rackspace Research</name>
-      <url>http://maven.research.rackspacecloud.com/content/groups/aggregate</url>
-    </repository>
-    
-    <repository>
-      <id>releases.maven.research.rackspace.com</id>
-      <name>Rackspace Research Releases</name>
-      <url>http://maven.research.rackspacecloud.com/content/repositories/releases</url>
-    </repository>
-    
-    <repository>
-      <id>trancecode.org</id>
-      <name>Trance Code Release Repo</name>
-      <url>http://maven.trancecode.org/releases/</url>
-    </repository>
-    
-    <repository>
-      <id>snapshots.trancecode.org</id>
-      <name>Trance Code Snapshot Repo</name>
-      <url>http://maven.trancecode.org/snapshots/</url>
-    </repository>
-  </repositories>
 
   <dependencies>
     <dependency>
@@ -99,23 +79,6 @@
     <developerConnection>scm:git:git@github.com:rackerlabs/olink-maven-plugin.git</developerConnection>
   </scm>
 
-    <distributionManagement>
-        <repository>
-            <id>releases.maven.research.rackspacecloud.com</id>
-
-            <name>Rackspace Cloud Research Releases</name>
-            <url>http://maven.research.rackspacecloud.com/content/repositories/releases/</url>
-        </repository>
-
-        <snapshotRepository>
-            <id>snapshots.maven.research.rackspacecloud.com</id>
-
-            <name>Rackspace Cloud Research Snapshots</name>
-            <url>http://maven.research.rackspacecloud.com/content/repositories/snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
-
-
   <build>
     <plugins>
       <plugin>
@@ -123,10 +86,55 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.1</version>
         <configuration>
-          <source>1.5</source>
-          <target>1.5</target>
+          <source>1.6</source>
+          <target>1.6</target>
         </configuration>
       </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>2.4</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <!-- override the version inherited from the parent -->
+        <version>2.16</version>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <!-- override the version inherited from the parent -->
+        <version>2.2.1</version>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <!-- override the version inherited from the parent -->
+        <version>2.9.1</version>
+        <configuration>
+          <quiet>true</quiet>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <!-- override the version inherited from the parent -->
+        <version>1.4</version>
+      </plugin>
+
     </plugins>
   </build>
 </project>
