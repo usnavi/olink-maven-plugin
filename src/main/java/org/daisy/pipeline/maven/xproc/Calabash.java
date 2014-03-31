@@ -14,6 +14,7 @@ import com.xmlcalabash.io.ReadablePipe;
 import com.xmlcalabash.io.WritableDocument;
 import com.xmlcalabash.model.RuntimeValue;
 import com.xmlcalabash.runtime.XPipeline;
+import com.xmlcalabash.util.Input;
 
 import net.sf.saxon.s9api.QName;
 
@@ -38,7 +39,7 @@ public class Calabash implements XProcEngine {
 	                Map<String,String> options,
 	                Map<String,Map<String,String>> parameters) {
 		try {
-			XPipeline xpipeline = runtime.load(pipeline);
+			XPipeline xpipeline = runtime.load( new Input( pipeline ) );
 			if (inputs != null)
 				for (String port : inputs.keySet())
 					xpipeline.writeTo(port, runtime.parse(inputs.get(port), null));
