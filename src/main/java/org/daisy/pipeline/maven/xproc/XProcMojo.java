@@ -123,6 +123,12 @@ public class XProcMojo extends org.apache.maven.plugin.AbstractMojo {
 			engine.run(asURI(pipeline), ins, null, options, params );
 			System.out.println("Running XProc ..."); }
 		catch (Exception e) {
-			throw new MojoExecutionException("Error running XProc", e); }
-	}
+			throw new MojoExecutionException("Error running XProc", e);
+        }
+        finally {
+
+            // clear system property to prevent any later saxon executions from getting these configurations
+            System.clearProperty("com.xmlcalabash.saxon-configuration" );
+        }
+    }
 }
